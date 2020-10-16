@@ -16,6 +16,11 @@ app.use(fileupload());
 
 const port = 5000;
 
+
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
     const orderCollection = client.db("customerOrderList").collection("customerOrder");
@@ -125,8 +130,6 @@ client.connect(err => {
 
 });
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+
 
 app.listen(process.env.PORT || port)
