@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const fileupload = require('express-fileUpload');
+const fileupload = require('express-fileupload');
 const MongoClient = require('mongodb').MongoClient;
 
 require('dotenv').config();
@@ -129,7 +129,5 @@ client.connect(err => {
     });
 
 });
-
-
 
 app.listen(process.env.PORT || port)
